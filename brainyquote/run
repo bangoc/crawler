@@ -1,0 +1,6 @@
+#!/bin/bash
+# Here we use two stages
+# 1. crawl all links to authors
+# 2. extract quote data from pages
+scrapy crawl authors -o authors.json
+scrapy crawl quotes -a filename=authors.json -s JOBDIR=crawls/brainyquote -o quotes.json
